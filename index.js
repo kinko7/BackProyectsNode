@@ -8,8 +8,8 @@ app.use(cors());
 //lo pongo en una variable para el deploy
 const port = process.env.PORT || 3000;
 
-const about = require("./json/about.json");
-const proyects = require("./json/proyects.json");
+const about = require("./api/proyects.json");
+const proyects = require("./api/about.json");
 
 
 app.get("/", (req, res) => {
