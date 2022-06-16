@@ -1,0 +1,31 @@
+ 
+const express = require("express");
+const cors = require("cors");
+ 
+const app = express();
+app.use(cors());
+
+//lo pongo en una variable para el deploy
+const port = process.env.PORT || 3000;
+
+const about = require("./json/about.json");
+const proyects = require("./json/proyects.json");
+
+
+app.get("/", (req, res) => {
+  res.send("Deploy");
+});
+
+app.get("/about", (req, res) => {
+  res.json(about);
+});
+
+app.get("/proyects", (req, res) => {
+  res.json(proyects);
+});
+
+
+
+app.listen(port, () => {
+  console.log("working");
+});
